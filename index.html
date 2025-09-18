@@ -5,12 +5,217 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- reset css -->
-    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/defaut.css" />
 
-    <!-- reset css -->
-    <link rel="stylesheet" href="./css/styles.css" />
+    <!-- styles css -->
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
 
-    <title>Document</title>
+    <!-- js -->
+    <script src="./assets/components/NavButton.js"></script>
+
+    <title>Footwear IQ</title>
   </head>
-  <body></body>
+  <body>
+    <!-- Header -->
+    <header class="header fix">
+      <div class="main-content">
+        <div class="body">
+          <!-- Logo -->
+          <label for="">FootWear <a class="IQ-logo">IQ</a></label>
+          <!-- Nav -->
+          <nav class="nav">
+            <ul id="button-list">
+              <li>
+                <a href="#!" class="btn btn-image">
+                  <img
+                    src="./assets/icon/play.svg"
+                    alt="Thư Viện"
+                    class="btn-logo"
+                  />
+                  <span>Thư Viện</span>
+                </a>
+              </li>
+              <li>
+                <a href="#!" class="btn btn-image">
+                  <img
+                    src="./assets/icon/play.svg"
+                    alt="Thư Viện"
+                    class="btn-logo"
+                  />
+                  <span>Nhập</span>
+                </a>
+              </li>
+              <li>
+                <a href="#!" class="btn btn-image">
+                  <img
+                    src="./assets/icon/play.svg"
+                    alt="Nhập"
+                    class="btn-logo"
+                  />
+                  <span>Phân Tích</span>
+                </a>
+              </li>
+              <li>
+                <a href="#!" class="btn btn-image">
+                  <img
+                    src="./assets/icon/play.svg"
+                    alt="Lịch Sử"
+                    class="btn-logo"
+                  />
+                  <span>Lịch Sử</span>
+                </a>
+              </li>
+              <li>
+                <a href="#!" class="btn btn-image">
+                  <img
+                    src="./assets/icon/play.svg"
+                    alt="Hồ Sơ"
+                    class="btn-logo"
+                  />
+                  <span>Hồ Sơ</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <!-- UserBtn -->
+          <div class="user-profile">
+            <div class="dropdown">
+              <input id="dropcheck" class="dropcheck" type="checkbox" />
+              <label for="dropcheck" class="dropbtn">
+                <img
+                  src="./assets/icon/play.svg"
+                  alt="Hồ Sơ"
+                  class="btn-logo"
+                />
+                <span>User Profile</span>
+              </label>
+
+              <div class="dropdown-content">
+                <ul>
+                  <li>
+                    <a href="#!" class="btn btn-image">
+                      <img
+                        src="./assets/icon/play.svg"
+                        alt="Hồ Sơ"
+                        class="btn-logo"
+                      />
+                      <span>Profile</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#!" class="btn btn-image">
+                      <img
+                        src="./assets/icon/play.svg"
+                        alt="Hồ Sơ"
+                        class="btn-logo"
+                      />
+                      <span>Setting</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#!" class="btn btn-image">
+                      <img
+                        src="./assets/icon/play.svg"
+                        alt="Hồ Sơ"
+                        class="btn-logo"
+                      />
+                      <span>Change Password</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#!" class="btn btn-image">
+                      <img
+                        src="./assets/icon/play.svg"
+                        alt="Hồ Sơ"
+                        class="btn-logo"
+                      />
+                      <span>Logout</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Main Page -->
+    <main class="main">
+      <!-- Left -->
+      <div class="left-block">
+        <div class="left-content">
+          <div class="left-filter">
+            <ul>
+              <li>
+                <a class="title">Thương Hiệu</a>
+                <input
+                  class="text-input"
+                  type="text"
+                  id="username"
+                  name="Thương Hiệu"
+                  placeholder="Chọn Thương Hiệu"
+                  list="brand-list"
+                />
+                <datalist id="brand-list">
+                  <option value="Nike"></option>
+                  <option value="Adidas"></option>
+                  <option value="Puma"></option>
+                  <option value="Converse"></option>
+                  <option value="Vans"></option>
+                  <option value="New Balance"></option>
+                  <option value="Fila"></option>
+                </datalist>
+              </li>
+              <li>
+                <a class="title">Loại</a>
+                <input
+                  class="text-input"
+                  type="text"
+                  id="username"
+                  name="Loại"
+                  placeholder="Nhập Loại Giày"
+                />
+              </li>
+              <li>
+                <a class="title">Mẫu</a>
+                <input
+                  class="text-input"
+                  type="text"
+                  id="username"
+                  name="Mẫu"
+                  placeholder="Nhập Mẫu"
+                />
+              </li>
+              <li>
+                <a class="title">ID Sản Phẩm</a>
+                <input
+                  class="text-input"
+                  type="text"
+                  id="username"
+                  name="ID Sản Phẩm"
+                  placeholder="Nhập ID Sản Phẩm"
+                />
+              </li>
+            </ul>
+          </div>
+          <hr class="separator-line" />
+          <div class="left-action">
+            <a href="#!" class="btn btn-image">
+              <img
+                src="./assets/icon/play.svg"
+                alt="Áp dụng bộ lọc"
+                class="btn-logo"
+              />
+              <span>Áp dụng bộ lọc</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Right -->
+      <div class="right-block"></div>
+    </main>
+  </body>
 </html>

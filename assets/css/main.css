@@ -1,0 +1,45 @@
+.main {
+  column-gap: 2rem;
+  display: flex;
+  flex: 1 1;
+  max-height: calc(100vh - 8rem);
+  overflow: auto;
+  padding: 1rem 2rem;
+}
+/* left-block */
+.left-block {
+  margin-top: 50px;
+  width: 24rem;
+
+  background-color: white;
+  border-radius: 4px;
+  display: flow;
+  height: auto;
+}
+
+.left-filter li {
+  display: flow;
+  padding-bottom: 10px;
+}
+
+.left-filter .title {
+  display: flow;
+  font-size: large;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+
+.left-filter .text-input {
+  height: 40px;
+  font-size: large;
+}
+
+.left-action {
+  padding-top: 10px;
+}
+
+.separator-line {
+  border: none; /* Removes the default border */
+  border-top: 1px solid #ccc; /* Adds your custom line */
+  margin: 20px 0; /* Adds space above and below the line */
+}

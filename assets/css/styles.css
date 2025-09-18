@@ -1,0 +1,145 @@
+::root {
+  --text-primary: #304e72;
+  --text-secondary: #717784;
+}
+
+/* Common */
+a {
+  text-decoration: none;
+}
+
+.main-content {
+  width: 100%;
+  max-width: calc(100% - 24px);
+  margin-left: auto;
+  margin-right: auto;
+  align-items: baseline;
+}
+/* Header */
+
+.header .body {
+  display: flex;
+  align-items: center;
+}
+
+header.fix {
+  padding: 0.5rem 2rem;
+  position: sticky;
+  z-index: 0;
+  top: 20px;
+}
+/* Nav  */
+.nav ul {
+  display: flex;
+}
+
+.nav {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.125rem 3rem;
+}
+
+.nav a {
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  margin: 0;
+  gap: 0.5rem;
+  position: relative;
+  padding: 0.625rem 1.125rem;
+  color: var(--text-primary);
+}
+
+.nav li {
+  padding: 0px 10px;
+}
+.header .user-profile {
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+/* Style for when the button is active (being clicked) */
+.active-btn {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color, #1976d2) 0,
+    var(--primary-dark, #1565c0) 100%
+  );
+  box-shadow: 0 6px 20px #1976d240, 0 2px 8px #1976d226, inset 0 1px 0 #fff3;
+  color: #fff;
+  font-weight: 600;
+  transform: translateY(-1px);
+}
+
+.dropbtn {
+  color: var(--text-primary);
+  border: none;
+  position: relative;
+  display: block;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  /* Ensures the arrow transition is smooth */
+  transition: all 0.3s ease;
+  padding: 10px 15px; /* Add some padding to make room for the arrow */
+}
+
+.dropbtn::after {
+  content: "V"; /* Unicode for a down-pointing triangle */
+  margin-left: auto; /* Pushes the arrow to the right */
+  font-size: 14px;
+  /* Smoothly rotate the arrow */
+  transition: transform 0.3s ease;
+  padding-left: 10px;
+}
+
+.dropcheck:checked + .dropbtn::after {
+  transform: rotateX(180deg);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropcheck {
+  position: absolute;
+  left: -9999px;
+}
+
+.dropcheck:checked ~ .dropdown-content {
+  display: block;
+}
+
+.dropcheck:checked + .dropbtn {
+  background-color: #f8f8f8;
+}
+
+.dropdown-content .btn {
+  border: none;
+}
