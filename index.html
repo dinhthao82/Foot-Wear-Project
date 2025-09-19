@@ -14,6 +14,9 @@
 
     <!-- js -->
     <script src="./assets/components/NavButton.js"></script>
+    <script src="./assets/components/GalleryButton.js"></script>
+    <script src="./assets/components/DropdownMenu.js"></script>
+    <script src="./assets/components/Gallery-Grid.js"></script>
 
     <title>Footwear IQ</title>
   </head>
@@ -83,7 +86,11 @@
           <!-- UserBtn -->
           <div class="user-profile">
             <div class="dropdown">
-              <input id="dropcheck" class="dropcheck" type="checkbox" />
+              <input
+                id="dropcheck"
+                class="dropcheck btn-dropdown"
+                type="checkbox"
+              />
               <label for="dropcheck" class="dropbtn">
                 <img
                   src="./assets/icon/play.svg"
@@ -93,49 +100,39 @@
                 <span>User Profile</span>
               </label>
 
-              <div class="dropdown-content">
-                <ul>
-                  <li>
-                    <a href="#!" class="btn btn-image">
-                      <img
-                        src="./assets/icon/play.svg"
-                        alt="Hồ Sơ"
-                        class="btn-logo"
-                      />
-                      <span>Profile</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#!" class="btn btn-image">
-                      <img
-                        src="./assets/icon/play.svg"
-                        alt="Hồ Sơ"
-                        class="btn-logo"
-                      />
-                      <span>Setting</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#!" class="btn btn-image">
-                      <img
-                        src="./assets/icon/play.svg"
-                        alt="Hồ Sơ"
-                        class="btn-logo"
-                      />
-                      <span>Change Password</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#!" class="btn btn-image">
-                      <img
-                        src="./assets/icon/play.svg"
-                        alt="Hồ Sơ"
-                        class="btn-logo"
-                      />
-                      <span>Logout</span>
-                    </a>
-                  </li>
-                </ul>
+              <div id="user-dropdown-menu" class="dropdown-content">
+                <a href="#!" class="btn btn-image">
+                  <img
+                    src="./assets/icon/play.svg"
+                    alt="Hồ Sơ"
+                    class="btn-logo"
+                  />
+                  <span>Profile</span>
+                </a>
+                <a href="#!" class="btn btn-image">
+                  <img
+                    src="./assets/icon/play.svg"
+                    alt="Hồ Sơ"
+                    class="btn-logo"
+                  />
+                  <span>Profile</span>
+                </a>
+                <a href="#!" class="btn btn-image">
+                  <img
+                    src="./assets/icon/play.svg"
+                    alt="Hồ Sơ"
+                    class="btn-logo"
+                  />
+                  <span>Profile</span>
+                </a>
+                <a href="#!" class="btn btn-image">
+                  <img
+                    src="./assets/icon/play.svg"
+                    alt="Hồ Sơ"
+                    class="btn-logo"
+                  />
+                  <span>Profile</span>
+                </a>
               </div>
             </div>
           </div>
@@ -215,7 +212,346 @@
         </div>
       </div>
       <!-- Right -->
-      <div class="right-block"></div>
+      <div class="right-block">
+        <div class="right-gallery">
+          <div class="gallery-button">
+            <div>
+              <ul id="button-list-gallery">
+                <li>
+                  <a href="#!" class="btn btn-galery">
+                    <span>Thư Viện Bán Lẻ</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#!" class="btn btn-galery">
+                    <span>Bằng Chứng Dấu Vết</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#!" class="btn btn-galery btn-galery-changestyle">
+                    <span>##</span>
+                  </a>
+                </li>
+                `
+                <li>
+                  <a href="#!" class="btn btn-galery btn-galery-changestyle">
+                    <span>##</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="gallery-container"></div>
+          <div class="gallery-footer">
+            <div>show</div>
+            <div id="pagination" class="paginationDiv"></div>
+          </div>
+          <script>
+            const data = [
+              {
+                id: 1,
+                brand: "Dr. Scholl's",
+                gender: "Men",
+                description:
+                  "Men's Feel Great Plantar Fasciitis Lace Up Sneaker J0630L2001",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 2,
+                brand: "Nike",
+                gender: "Men",
+                description: "Nike Air Force 1 '07",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              {
+                id: 3,
+                brand: "Adidas",
+                gender: "Women",
+                description: "Adidas Ultraboost 21 Running Shoes",
+                image: "./assets/listitem/shoes1.png",
+                detailIcon: "./assets/icon/play.svg",
+              },
+              // Add more objects to this array as needed
+            ];
+
+            renderGalleryItems(data, 1);
+          </script>
+        </div>
+      </div>
     </main>
   </body>
 </html>

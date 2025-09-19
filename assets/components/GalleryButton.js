@@ -1,7 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Find the list of buttons by their parent ID
-  const buttons = document.querySelectorAll("#button-list .btn-image");
+  const buttons = document.querySelectorAll(
+    "#button-list-gallery .btn-gallery"
+  );
+
   console.log(buttons);
+
   // Loop through each button to add a click event listener
   buttons.forEach((button) => {
     button.addEventListener("click", function () {

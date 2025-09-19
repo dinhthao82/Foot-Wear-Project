@@ -3,7 +3,6 @@
   display: flex;
   flex: 1 1;
   max-height: calc(100vh - 8rem);
-  overflow: auto;
   padding: 1rem 2rem;
 }
 /* left-block */
@@ -15,6 +14,10 @@
   border-radius: 4px;
   display: flow;
   height: auto;
+
+  position: sticky;
+  z-index: 1;
+  top: 30px;
 }
 
 .left-filter li {
@@ -42,4 +45,195 @@
   border: none; /* Removes the default border */
   border-top: 1px solid #ccc; /* Adds your custom line */
   margin: 20px 0; /* Adds space above and below the line */
+}
+
+.right-block {
+  margin-top: 50px;
+  width: calc(100% - 24rem);
+
+  background-color: white;
+  border-radius: 4px;
+  display: flex;
+  height: auto;
+
+  position: sticky;
+  z-index: 1;
+  top: 30px;
+}
+
+.right-gallery {
+  width: 100%;
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.625rem 0;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.gallery-button {
+  position: sticky;
+  z-index: 0;
+
+  li {
+    padding: 10px;
+  }
+}
+
+.btn-galery {
+  width: 49%;
+  text-align: center;
+}
+
+/* gallery-grid */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Three equal-width columns */
+  gap: 20px; /* Space between grid items */
+  padding: 20px;
+  border: 1px solid #ccc;
+  max-height: 75%;
+  overflow: auto; /* Enable vertical scrolling for the container */
+}
+
+.gallery-item {
+  background-color: #f0f0f0;
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #eee;
+
+  cursor: pointer;
+  align-items: center;
+  position: relative;
+  background-color: #1f58b908;
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 6px 12px #1f58b926;
+  border-radius: 5px;
+}
+
+.gallery-item .gallery-details {
+  border-top: 1px solid #0000000d;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  opacity: 0.7;
+  padding: 0.5rem 0;
+  transform: translateY(5px);
+  transition: all 0.3s ease;
+}
+.btn-icon {
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    color: #fff;
+    background-color: #1b5594;
+    border-color: #1b5594;
+    cursor: pointer;
+  }
+
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  font-size: 1rem;
+  height: 2rem;
+  justify-content: center;
+  transition: all 0.2s ease;
+  width: 2rem;
+}
+
+.gallery-index {
+  align-items: center;
+  align-self: flex-start;
+  background-color: var(--white-color);
+  border-bottom-right-radius: 0.25rem;
+  box-shadow: none;
+  color: var(--primary-color);
+  display: flex;
+  font-family: var(--font-montserrat);
+  font-size: 0.75rem;
+  font-weight: 600;
+  height: auto;
+  justify-content: center;
+  left: 2px;
+  margin-bottom: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  position: absolute;
+  top: 2px;
+  transition: width 0.2s, height 0.2s, border-radius 0.2s, font-size 0.2s,
+    padding 0.2s;
+  width: auto;
+  z-index: 1;
+}
+
+.gallery-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.gallery-data .row-data:first-child {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 550;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gallery-data .row-data {
+  font-family: Montserrat, sans-serif;
+  line-height: 1.4;
+  margin-bottom: 0.4rem;
+  overflow-wrap: break-word;
+  width: 100%;
+  word-break: normal;
+  text-align: left;
+}
+
+/*right- footer */
+.gallery-footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pagination li:hover {
+  cursor: pointer;
+}
+
+.paginationDiv {
+  height: 50px;
+}
+
+.pagination-button {
+  width: 40px;
+  height: 40px;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  color: black;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0 4px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pagination-buttonAction {
+  width: 100px;
+  height: 40px;
+  border-radius: 4px;
 }
