@@ -61,14 +61,14 @@ header.fix {
 }
 
 /* Style for when the button is active (being clicked) */
-.active-btn {
+.nav .active-btn {
   background: linear-gradient(
     135deg,
     var(--primary-color, #1976d2) 0,
     var(--primary-dark, #1565c0) 100%
   );
   box-shadow: 0 6px 20px #1976d240, 0 2px 8px #1976d226, inset 0 1px 0 #fff3;
-  color: #fff;
+  color: white;
   font-weight: 600;
   transform: translateY(-1px);
 }

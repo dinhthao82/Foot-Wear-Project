@@ -41,11 +41,7 @@ function renderGalleryItems(data, page) {
           ${item.description}
         </div>
         <div class="gallery-details">
-          <img
-            src="${item.detailIcon}"
-            alt="detail icon"
-            class="btn-icon"
-          />
+         <i class="fa fa-info" data-type="tooltip" alt="Chi Tiết"></i>
         </div>
       </div>
     `;
