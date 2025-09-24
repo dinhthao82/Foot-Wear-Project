@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- link goole font -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 
     <!-- reset css -->
     <link rel="stylesheet" href="./assets/css/reset.css" />
@@ -29,7 +34,7 @@
       <div class="main-content">
         <div class="body">
           <!-- Logo -->
-          <label for="">FootWear <a class="IQ-logo">IQ</a></label>
+          <label><b>FootWear</b><a class="IQ-logo">IQ</a></label>
           <!-- Nav -->
           <nav class="nav">
             <ul id="button-list">
@@ -226,46 +231,18 @@
                 type="checkbox"
               />
               <label for="dropcheck" class="dropbtn">
-                <img
-                  src="./assets/icon/play.svg"
-                  alt="Hồ Sơ"
-                  class="btn-logo"
-                />
-                <span>User Profile</span>
+               <i class="fa fa-user" aria-hidden="true"></i>
+                <span>User Profile</span>              
               </label>
 
               <div id="user-dropdown-menu" class="dropdown-content">
                 <a href="#!" class="btn btn-image">
-                  <img
-                    src="./assets/icon/play.svg"
-                    alt="Hồ Sơ"
-                    class="btn-logo"
-                  />
+                 <i class="fa fa-user-circle" aria-hidden="true"></i>
                   <span>Profile</span>
-                </a>
-                <a href="#!" class="btn btn-image">
-                  <img
-                    src="./assets/icon/play.svg"
-                    alt="Hồ Sơ"
-                    class="btn-logo"
-                  />
-                  <span>Profile</span>
-                </a>
-                <a href="#!" class="btn btn-image">
-                  <img
-                    src="./assets/icon/play.svg"
-                    alt="Hồ Sơ"
-                    class="btn-logo"
-                  />
-                  <span>Profile</span>
-                </a>
-                <a href="#!" class="btn btn-image">
-                  <img
-                    src="./assets/icon/play.svg"
-                    alt="Hồ Sơ"
-                    class="btn-logo"
-                  />
-                  <span>Profile</span>
+                </a>             
+                <a href="#!" class="btn btn-image">    
+                  <i class="fa fa-sign-out" aria-hidden="true"></i>       
+                  <span>LogOut</span>
                 </a>
               </div>
             </div>
@@ -285,12 +262,12 @@
                 <input
                   class="text-input"
                   type="text"
-                  id="username"
+                  id="brand"
                   name="Thương Hiệu"
                   placeholder="Chọn Thương Hiệu"
                   list="brand-list"
                 />
-                <datalist id="brand-list">
+                <datalist class="data-list" id="brand-list">
                   <option value="Nike"></option>
                   <option value="Adidas"></option>
                   <option value="Puma"></option>
@@ -359,22 +336,21 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#!" class="btn btn-galery btn-galery-changestyle">
+                  <a href="#!" class="btn btn-galery btn-galery-changestyle" id="btn-grid">
                    <i class="fa fa-th"></i>
                   </a>
                 </li>
-                `
                 <li>
-                  <a href="#!" class="btn btn-galery btn-galery-changestyle">
+                  <a href="#!" class="btn btn-galery btn-galery-changestyle" id="btn-list">
                    <i class="fa fa-list"></i>
                   </a>
                 </li>
               </ul>
             </div>
           </div>
-          <div class="gallery-container"></div>
+          <div class="gallery-container show-list"></div>
           <div class="gallery-footer">
-            <div>show</div>
+            <div id="shownumber" class="showNumberDiv"></div>
             <div id="pagination" class="paginationDiv"></div>
           </div>
           <script>

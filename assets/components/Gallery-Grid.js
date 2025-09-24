@@ -2,6 +2,8 @@ const itemPerPage = 8;
 let currentPage = 1;
 const page = currentPage;
 let _data;
+let startIndex = 0,
+  endIndex = 0;
 
 function renderGalleryItems(data, page) {
   // Select the container where the items will be added
@@ -10,8 +12,8 @@ function renderGalleryItems(data, page) {
   _data = data;
   // Clear any existing content to prevent duplicates
   galleryContainer.innerHTML = "";
-  const startIndex = (page - 1) * itemPerPage;
-  const endIndex = startIndex + itemPerPage;
+  startIndex = (page - 1) * itemPerPage;
+  endIndex = Math.min(startIndex + itemPerPage, data.length);
   const slicedData = data.slice(startIndex, endIndex);
 
   console.log("slicedData", slicedData);
@@ -50,7 +52,16 @@ function renderGalleryItems(data, page) {
     galleryContainer.appendChild(galleryItem);
   });
 }
+function setNumberDiv() {
+  const showNumberDiv = document.getElementById("shownumber");
 
+  const showItem = document.createElement("div");
+  showNumberDiv.innerHTML = "";
+
+  showItem.innerHTML = `show ${endIndex - startIndex} total ${data.length}`;
+
+  showNumberDiv.appendChild(showItem);
+}
 function setupPagination() {
   const paginationDiv = document.getElementById("pagination");
   paginationDiv.innerHTML = ""; // Clear existing controls
@@ -68,6 +79,7 @@ function setupPagination() {
     currentPage--;
     renderGalleryItems(_data, currentPage);
     setupPagination();
+    setNumberDiv();
   });
   paginationDiv.appendChild(prevButton);
 
@@ -87,6 +99,7 @@ function setupPagination() {
       currentPage = i;
       renderGalleryItems(_data, currentPage);
       setupPagination();
+      setNumberDiv();
     });
     paginationDiv.appendChild(pageButton);
   }
@@ -100,6 +113,7 @@ function setupPagination() {
     currentPage++;
     renderGalleryItems(_data, currentPage);
     setupPagination();
+    setNumberDiv();
   });
   paginationDiv.appendChild(nextButton);
 }
@@ -108,4 +122,5 @@ function setupPagination() {
 document.addEventListener("DOMContentLoaded", () => {
   renderGalleryItems(_data, currentPage);
   setupPagination();
+  setNumberDiv();
 });

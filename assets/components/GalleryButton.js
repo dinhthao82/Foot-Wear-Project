@@ -1,11 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Find the list of buttons by their parent ID
-  const buttons = document.querySelectorAll(
-    "#button-list-gallery .btn-gallery"
-  );
-
+  const buttons = document.querySelectorAll("#button-list-gallery .btn-galery");
   console.log(buttons);
-
   // Loop through each button to add a click event listener
   buttons.forEach((button) => {
     button.addEventListener("click", function () {
@@ -25,13 +21,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // Get the inner div with the class 'left-content'
   const leftContent = document.querySelector(".left-filter");
 
-  const button = document.getElementById("btn-RETAIL");
-  const button1 = document.getElementById("btn-IMPRESSION");
+  const button_RETAIL = document.getElementById("btn-RETAIL");
+  const button_IMPRESSION = document.getElementById("btn-IMPRESSION");
 
-  console.log("btn-RETAIL", button);
+  const button_grid = document.getElementById("btn-grid");
+  const button_list = document.getElementById("btn-list");
+
+  console.log("btn-RETAIL", button_RETAIL);
 
   // Add a click event listener to the selected element
-  button.addEventListener("click", () => {
+  button_RETAIL.addEventListener("click", () => {
     // Change the class of the element to 'left-block2'
     leftContent.className = "left-filter";
 
@@ -94,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("left-Content-inner", leftContent);
   });
 
-  button1.addEventListener("click", () => {
+  button_IMPRESSION.addEventListener("click", () => {
     // Change the class of the element to 'left-block2'
     leftContent.className = "left-filter";
 
@@ -123,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </datalist>
               </li>
               <li>
-                <a>Loại Dữ Liệu</a>
+                <a class="title">Loại Dữ Liệu</a>
                 <div class="checkbox-group">
                   <label>
                     <input type="checkbox" value="2" />Dấu Vết Thu Hồi</label
@@ -134,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
               </li>
               <li>
-                <a class="title2">Số Vụ/Sự Cố</a>
+                <a class="title">Số Vụ/Sự Cố</a>
                 <input
                   class="text-input"
                   type="text"
@@ -146,5 +145,21 @@ document.addEventListener("DOMContentLoaded", () => {
             </ul>`;
 
     console.log("left-Content-inner", leftContent);
+  });
+
+  button_grid.addEventListener("click", () => {
+    const galleryContainer = document.querySelector(".gallery-container");
+    galleryContainer.style.display = "grid";
+
+    const galleryitems = document.querySelectorAll(".gallery-item");
+    galleryitems.forEach((item) => (item.style.display = "flow"));
+  });
+
+  button_list.addEventListener("click", () => {
+    const galleryContainer = document.querySelector(".gallery-container");
+    galleryContainer.style.display = "list-item";
+
+    const galleryitems = document.querySelectorAll(".gallery-item");
+    galleryitems.forEach((item) => (item.style.display = "flex"));
   });
 });
