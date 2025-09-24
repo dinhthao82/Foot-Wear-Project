@@ -37,26 +37,13 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("left-filter", leftContent);
 
     leftContent.innerHTML = `
-           <ul>
+            <ul>
               <li>
                 <a class="title">Thương Hiệu</a>
-                <input
-                  class="text-input"
-                  type="text"
-                  id="username"
-                  name="Thương Hiệu"
-                  placeholder="Chọn Thương Hiệu"
-                  list="brand-list"
-                />
-                <datalist id="brand-list">
-                  <option value="Nike"></option>
-                  <option value="Adidas"></option>
-                  <option value="Puma"></option>
-                  <option value="Converse"></option>
-                  <option value="Vans"></option>
-                  <option value="New Balance"></option>
-                  <option value="Fila"></option>
-                </datalist>
+                <div class="search-container">
+                   <input type="text" id="searchInput" placeholder="Search..." />
+                   <ul id="searchList" class="search-list"></ul>
+                </div> 
               </li>
               <li>
                 <a class="title">Loại</a>
@@ -89,6 +76,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 />
               </li>
             </ul>`;
+
+    LoadData();
 
     console.log("left-Content-inner", leftContent);
   });
@@ -162,4 +151,69 @@ document.addEventListener("DOMContentLoaded", () => {
     const galleryitems = document.querySelectorAll(".gallery-item");
     galleryitems.forEach((item) => (item.style.display = "flex"));
   });
+});
+
+function LoadData_RETAIL() {
+  const searchInput = document.getElementById("searchInput");
+  const searchList = document.getElementById("searchList");
+
+  // Sample data to be searched
+  const data = [
+    "Nike",
+    "Adidas",
+    "Puma",
+    "New Balance",
+    "Grape",
+    "Lemon",
+    "Mango",
+    "Orange",
+    "Peach",
+    "Pineapple",
+  ];
+
+  // Function to render the list items
+  const renderList = (items) => {
+    searchList.innerHTML = ""; // Clear previous results
+    items.forEach((item) => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      searchList.appendChild(li);
+    });
+  };
+
+  // 1. Show the list on click
+  searchInput.addEventListener("click", () => {
+    renderList(data);
+    searchList.classList.add("show");
+  });
+
+  // 2. Filter the list as the user types
+  searchInput.addEventListener("input", () => {
+    const query = searchInput.value.toLowerCase();
+    const filteredData = data.filter((item) =>
+      item.toLowerCase().includes(query)
+    );
+    renderList(filteredData);
+    searchList.classList.add("show");
+  });
+
+  // 3. Select an item from the list
+  searchList.addEventListener("click", (event) => {
+    if (event.target.tagName === "LI") {
+      searchInput.value = event.target.textContent;
+      searchList.classList.remove("show");
+    }
+  });
+
+  // 4. Hide the list when clicking outside
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".search-container")) {
+      searchList.classList.remove("show");
+    }
+  });
+}
+
+//LoadData_RETAIL
+document.addEventListener("DOMContentLoaded", () => {
+  LoadData_RETAIL();
 });

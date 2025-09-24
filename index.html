@@ -23,7 +23,6 @@
     <!-- js -->
     <script src="./assets/components/NavButton.js"></script>
     <script src="./assets/components/GalleryButton.js"></script>
-    <script src="./assets/components/DropdownMenu.js"></script>
     <script src="./assets/components/Gallery-Grid.js"></script>
 
     <title>Footwear IQ</title>
@@ -259,23 +258,10 @@
             <ul>
               <li>
                 <a class="title">Thương Hiệu</a>
-                <input
-                  class="text-input"
-                  type="text"
-                  id="brand"
-                  name="Thương Hiệu"
-                  placeholder="Chọn Thương Hiệu"
-                  list="brand-list"
-                />
-                <datalist class="data-list" id="brand-list">
-                  <option value="Nike"></option>
-                  <option value="Adidas"></option>
-                  <option value="Puma"></option>
-                  <option value="Converse"></option>
-                  <option value="Vans"></option>
-                  <option value="New Balance"></option>
-                  <option value="Fila"></option>
-                </datalist>
+                <div class="search-container">
+                   <input type="text" id="searchInput" placeholder="Search..." />
+                   <ul id="searchList" class="search-list"></ul>
+                </div> 
               </li>
               <li>
                 <a class="title">Loại</a>
