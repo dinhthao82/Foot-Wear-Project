@@ -5,23 +5,15 @@ let _data;
 let startIndex = 0,
   endIndex = 0;
 
-function renderGalleryItems(data, page) {
-  // Select the container where the items will be added
+const _detailDiv = ` <div class="gallery-details gallery-details-list">
+      <i class="fa fa-info" data-type="tooltip" alt="Chi Tiết"></i>
+    </div>`;
+
+function renderGalleryItems_grid(data_input) {
   const galleryContainer = document.querySelector(".gallery-container");
-
-  _data = data;
-  // Clear any existing content to prevent duplicates
   galleryContainer.innerHTML = "";
-  startIndex = (page - 1) * itemPerPage;
-  endIndex = Math.min(startIndex + itemPerPage, data.length);
-  const slicedData = data.slice(startIndex, endIndex);
-
-  console.log("slicedData", slicedData);
-  console.log("page", page);
-  console.log("startIndex", startIndex);
-  console.log("endIndex", endIndex);
   // Loop through the data array and create an HTML element for each item
-  slicedData.forEach((item) => {
+  data_input.forEach((item) => {
     // Create the main gallery item div
     const galleryItem = document.createElement("div");
     galleryItem.classList.add("gallery-item");
@@ -42,15 +34,77 @@ function renderGalleryItems(data, page) {
         <div class="row-data">
           ${item.description}
         </div>
-        <div class="gallery-details">
-         <i class="fa fa-info" data-type="tooltip" alt="Chi Tiết"></i>
-        </div>
       </div>
+     ${_detailDiv}
     `;
+    console.log("galleryItem", galleryItem);
 
-    // Append the newly created item to the gallery container
     galleryContainer.appendChild(galleryItem);
   });
+}
+
+function renderGalleryItems_Table(data_input) {
+  console.log("renderGalleryItems_Table-Body");
+
+  const galleryContainer = document.querySelector(".gallery-container");
+  galleryContainer.innerHTML = "";
+
+  const galleryTable = document.createElement("div");
+  galleryTable.classList.add("gallery-table");
+  galleryTable.style.width = "100%";
+  galleryTable.innerHTML = `<table class="table-Gallery" >
+  <thead class="table-Header">
+          <tr>
+            <th>No</th>
+            <th>Image</th>
+            <th>Make</th>
+            <th>Shoe Type</th>
+            <th>Model</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody class="table-Body" </tbody>
+      </table>
+      `;
+
+  let table = galleryTable.querySelector(".table-Body");
+
+  console.log("table-Body", table);
+
+  data_input.forEach((item) => {
+    // Insert new rows into the table body
+    let img = document.createElement("img");
+
+    img.src = item.image; // Replace with the actual path to your image
+
+    img.alt = item.description;
+
+    let tr = table.insertRow();
+    tr.insertCell().textContent = item.id;
+    tr.insertCell().appendChild(img);
+
+    tr.insertCell().textContent = item.brand;
+    tr.insertCell().textContent = item.gender;
+    tr.insertCell().textContent = item.description;
+    tr.insertCell().innerHTML = _detailDiv;
+  });
+
+  console.log("galleryTable", galleryTable);
+
+  galleryContainer.appendChild(galleryTable);
+}
+function renderGalleryItems(data, page) {
+  // Select the container where the items will be added
+
+  _data = data;
+  // Clear any existing content to prevent duplicates
+
+  startIndex = (page - 1) * itemPerPage;
+  endIndex = Math.min(startIndex + itemPerPage, data.length);
+  const slicedData = data.slice(startIndex, endIndex);
+
+  if (_galleryType === 0) renderGalleryItems_grid(slicedData);
+  else renderGalleryItems_Table(slicedData);
 }
 function setNumberDiv() {
   const showNumberDiv = document.getElementById("shownumber");
@@ -123,4 +177,36 @@ document.addEventListener("DOMContentLoaded", () => {
   renderGalleryItems(_data, currentPage);
   setupPagination();
   setNumberDiv();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const button_grid = document.getElementById("btn-grid");
+  const button_list = document.getElementById("btn-list");
+
+  button_grid.addEventListener("click", () => {
+    const galleryContainer = document.querySelector(".gallery-container");
+    galleryContainer.style.display = "grid";
+
+    const galleryItems = document.querySelectorAll(".gallery-item");
+    galleryItems.forEach((item) => (item.style.display = "flow"));
+
+    const galleryData = document.querySelectorAll(".gallery-data");
+    galleryData.forEach((item) => (item.style.display = "flow"));
+
+    _galleryType = 0;
+
+    renderGalleryItems(_data, currentPage);
+    setupPagination();
+    setNumberDiv();
+  });
+
+  button_list.addEventListener("click", () => {
+    const galleryItems = document.querySelectorAll(".gallery-item");
+    galleryItems.forEach((item) => (item.style.display = "none"));
+
+    _galleryType = 1;
+    renderGalleryItems(_data, currentPage);
+    setupPagination();
+    setNumberDiv();
+  });
 });

@@ -1,3 +1,19 @@
+let dataShoes = [
+  "Nike",
+  "Adidas",
+  "Puma",
+  "New Balance",
+  "Grape",
+  "Lemon",
+  "Mango",
+  "Orange",
+  "Peach",
+  "Pineapple",
+];
+
+let _galleryType = 0; //grid 1 //table
+
+let dataUser = ["u1", "u2", "u3", "u4"];
 document.addEventListener("DOMContentLoaded", function () {
   // Find the list of buttons by their parent ID
   const buttons = document.querySelectorAll("#button-list-gallery .btn-galery");
@@ -35,6 +51,8 @@ document.addEventListener("DOMContentLoaded", () => {
     leftContent.className = "left-filter";
 
     console.log("left-filter", leftContent);
+
+    // Sample data to be searched
 
     leftContent.innerHTML = `
             <ul>
@@ -77,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
               </li>
             </ul>`;
 
-    LoadData();
+    LoadData(dataShoes);
 
     console.log("left-Content-inner", leftContent);
   });
@@ -92,23 +110,10 @@ document.addEventListener("DOMContentLoaded", () => {
           <ul>
               <li>
                 <a class="title">Máy Quét</a>
-                <input
-                  class="text-input"
-                  type="text"
-                  id="username"
-                  name="Máy Quét"
-                  placeholder="Curent-User"
-                  list="user-list"
-                />
-                <datalist id="user-list">
-                  <option value="User1"></option>
-                  <option value="User2"></option>
-                  <option value="User3"></option>
-                  <option value="User4"></option>
-                  <option value="User5"></option>
-                  <option value="User6"></option>
-                  <option value="User7"></option>
-                </datalist>
+               <div class="search-container">
+                   <input type="text" id="searchInput" placeholder="Search..." />
+                   <ul id="searchList" class="search-list"></ul>
+                </div> 
               </li>
               <li>
                 <a class="title">Loại Dữ Liệu</a>
@@ -133,43 +138,34 @@ document.addEventListener("DOMContentLoaded", () => {
               </li>
             </ul>`;
 
+    LoadData(dataUser);
+
     console.log("left-Content-inner", leftContent);
   });
 
-  button_grid.addEventListener("click", () => {
-    const galleryContainer = document.querySelector(".gallery-container");
-    galleryContainer.style.display = "grid";
+  // button_grid.addEventListener("click", () => {
+  //   const galleryContainer = document.querySelector(".gallery-container");
+  //   galleryContainer.style.display = "grid";
 
-    const galleryitems = document.querySelectorAll(".gallery-item");
-    galleryitems.forEach((item) => (item.style.display = "flow"));
-  });
+  //   const galleryItems = document.querySelectorAll(".gallery-item");
+  //   galleryItems.forEach((item) => (item.style.display = "flow"));
 
-  button_list.addEventListener("click", () => {
-    const galleryContainer = document.querySelector(".gallery-container");
-    galleryContainer.style.display = "list-item";
+  //   const galleryData = document.querySelectorAll(".gallery-data");
+  //   galleryData.forEach((item) => (item.style.display = "flow"));
 
-    const galleryitems = document.querySelectorAll(".gallery-item");
-    galleryitems.forEach((item) => (item.style.display = "flex"));
-  });
+  //   _galleryType = 0;
+  // });
+
+  // button_list.addEventListener("click", () => {
+  //   _galleryType = 1;
+  //   const galleryItems = document.querySelectorAll(".gallery-item");
+  //   galleryItems.forEach((item) => (item.style.display = "none"));
+  // });
 });
 
-function LoadData_RETAIL() {
+function LoadData(data) {
   const searchInput = document.getElementById("searchInput");
   const searchList = document.getElementById("searchList");
-
-  // Sample data to be searched
-  const data = [
-    "Nike",
-    "Adidas",
-    "Puma",
-    "New Balance",
-    "Grape",
-    "Lemon",
-    "Mango",
-    "Orange",
-    "Peach",
-    "Pineapple",
-  ];
 
   // Function to render the list items
   const renderList = (items) => {
@@ -215,5 +211,5 @@ function LoadData_RETAIL() {
 
 //LoadData_RETAIL
 document.addEventListener("DOMContentLoaded", () => {
-  LoadData_RETAIL();
+  LoadData(dataShoes);
 });

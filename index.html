@@ -7,7 +7,7 @@
     <!-- link goole font -->
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+     <!-- <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> -->
 
 
     <!-- reset css -->
@@ -24,7 +24,12 @@
     <script src="./assets/components/NavButton.js"></script>
     <script src="./assets/components/GalleryButton.js"></script>
     <script src="./assets/components/Gallery-Grid.js"></script>
+    <script src="./assets/components/Account-Btn.js"></script>
 
+ 
+
+    <!-- icon -->
+    <link rel="icon" href="https://faas.evidenceiq.com/fiq/favicon.ico">
     <title>Footwear IQ</title>
   </head>
   <body>
@@ -87,7 +92,13 @@
                       stroke-linecap="round"
                     ></line>
                   </svg>
-                  <span>Thư Viện</span>
+                  <label>Retail</label>
+                </a>
+              </li>
+                  <li>
+                <a href="#!" class="btn btn-image">
+                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="24" fill="none" viewBox="0 0 20 24"><rect x="1" y="1" width="18" height="22" stroke="currentColor" stroke-width="1.5" stroke-dasharray="0" fill="none" rx="2"></rect><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" fill="rgb(59, 130, 246, 0.1)" d="M10 3.795c-3.25 0-4.55 2.925-4.55 5.265 0 .936.26 1.755.52 2.574.13.468.26.936.26 1.287.13.351.26.702.52.936.39.351 1.04.468 1.69.468h3.12c.65 0 1.3-.117 1.69-.468.26-.234.39-.585.52-.936 0-.351.13-.819.26-1.287.26-.819.52-1.638.52-2.574 0-2.34-1.3-5.265-4.55-5.265z"></path><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" fill="rgba(34, 197, 94, 0.15)" d="M7.324 15.524c0 .5616 0 1.1232.156 1.6848.156.7488.312 1.4976.624 2.0592.468.7488 1.248.7488 2.028.7488s1.56 0 2.028-.7488c.312-.5616.468-1.3104.624-2.0592.156-.5616.156-1.1232.156-1.6848H7.724z"></path></svg>
+                  <label>Evidence</label>
                 </a>
               </li>
               <li>
@@ -107,7 +118,7 @@
                       d="M12 7.757v8.486M7.757 12H16.243M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                     ></path>
                   </svg>
-                  <span>Nhập</span>
+                  <label>Import</label>
                 </a>
               </li>
               <li>
@@ -136,7 +147,7 @@
                       stroke-linecap="round"
                     ></line>
                   </svg>
-                  <span>Phân Tích</span>
+                  <label>Analyze</label>
                 </a>
               </li>
               <li>
@@ -156,7 +167,7 @@
                       d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                     ></path>
                   </svg>
-                  <span>Lịch Sử</span>
+                  <label>History</label>
                 </a>
               </li>
               <li>
@@ -215,37 +226,21 @@
                       stroke-linecap="round"
                     ></line>
                   </svg>
-                  <span>Hồ Sơ</span>
+                  <label>Guide</label>
                 </a>
               </li>
             </ul>
           </nav>
 
           <!-- UserBtn -->
-          <div class="user-profile">
-            <div class="dropdown">
-              <input
-                id="dropcheck"
-                class="dropcheck btn-dropdown"
-                type="checkbox"
-              />
-              <label for="dropcheck" class="dropbtn">
-               <i class="fa fa-user" aria-hidden="true"></i>
-                <span>User Profile</span>              
-              </label>
-
-              <div id="user-dropdown-menu" class="dropdown-content">
-                <a href="#!" class="btn btn-image">
-                 <i class="fa fa-user-circle" aria-hidden="true"></i>
-                  <span>Profile</span>
-                </a>             
-                <a href="#!" class="btn btn-image">    
-                  <i class="fa fa-sign-out" aria-hidden="true"></i>       
-                  <span>LogOut</span>
-                </a>
-              </div>
-            </div>
+          <div class="accountDiv flex">
+            <button class="accountButton" id="btn-account">
+              <i class="fa fa-user" aria-hidden="true"></i>
+              <span class="userName">u_thao</span>
+              <i class="fa fa-angle-down " aria-hidden="true"></i>
+            </button>
           </div>
+          <div class="accountMenu"></div>
         </div>
       </div>
     </header>
@@ -257,40 +252,40 @@
           <div class="left-filter">
             <ul>
               <li>
-                <a class="title">Thương Hiệu</a>
+                <a class="title">Make</a>
                 <div class="search-container">
-                   <input type="text" id="searchInput" placeholder="Search..." />
+                   <input type="text" id="searchInput" placeholder="Select Make" />
                    <ul id="searchList" class="search-list"></ul>
                 </div> 
               </li>
               <li>
-                <a class="title">Loại</a>
+                <a class="title">Type</a>
                 <input
                   class="text-input"
                   type="text"
-                  id="username"
-                  name="Loại"
-                  placeholder="Nhập Loại Giày"
+                  id="type"
+                  name="Type"
+                  placeholder="Enter type(s), separated by commas or semicolons."
                 />
               </li>
               <li>
-                <a class="title">Mẫu</a>
+                <a class="title">Mode</a>
                 <input
                   class="text-input"
                   type="text"
-                  id="username"
-                  name="Mẫu"
-                  placeholder="Nhập Mẫu"
+                  id="mode"
+                  name="Mode"
+                  placeholder="Enter model(s), separated by commas or semicolons."
                 />
               </li>
               <li>
-                <a class="title">ID Sản Phẩm</a>
+                <a class="title">Produce ID</a>
                 <input
                   class="text-input"
                   type="text"
-                  id="username"
-                  name="ID Sản Phẩm"
-                  placeholder="Nhập ID Sản Phẩm"
+                  id="produceID"
+                  name="Produce ID"
+                  placeholder="Enter Produce ID"
                 />
               </li>
             </ul>
@@ -299,7 +294,7 @@
           <div class="left-action">
            <a href="#!" class="btn btn-image">
               <i class="fa fa-filter"></i>
-              Áp dụng bộ lọc
+              Apply Filter
             </a>
             </a>
           </div>
